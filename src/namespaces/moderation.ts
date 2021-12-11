@@ -1,5 +1,4 @@
 import Discord from "discord.js"
-import { moderation } from "../app.js"
 
 import moderations from "../tables/moderation.table.js"
 
