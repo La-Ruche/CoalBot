@@ -12,6 +12,7 @@ export default new app.Table<Messages>({
     table.string("userID")
     table.text("content")
     table.string("messageID")
+    table.string("channelID")
     table.timestamp("created_at").defaultTo(app.dayjs().valueOf())
   },
 })
