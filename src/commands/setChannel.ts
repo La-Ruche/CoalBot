@@ -4,6 +4,7 @@ export default new app.Command({
   name: "setChannel",
   description: "The set command",
   channelType: "guild",
+  userPermissions: ["MANAGE_CHANNELS"],
   positional: [
     {
       name: "name",
@@ -24,7 +25,7 @@ export default new app.Command({
     }
 
     app.channelsType.insert(message.args.name, channelID, message.author.id)
-    
+
     return message.send("Command executer.")
   }
 })
