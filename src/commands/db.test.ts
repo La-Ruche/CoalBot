@@ -4,6 +4,7 @@ export default new app.Command({
   name: "db.test",
   description: "The testDB command",
   channelType: "all",
+  botOwnerOnly: true,
   async run(message) {
     app.moderation.get("warn", message.author).then((data) => {
       console.log(data)

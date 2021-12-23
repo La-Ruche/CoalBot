@@ -4,6 +4,7 @@ export default new app.Command({
   name: "emit.test",
   description: "The emit.test command",
   channelType: "all",
+  botOwnerOnly: true,
   async run(message) {
     // todo: code here
     let eventEmit = 'guildMemberRemove'
