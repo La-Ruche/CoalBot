@@ -1,7 +1,7 @@
 import * as app from "../app.js"
 
 export default new app.Command({
-  name: "testDB",
+  name: "db.test",
   description: "The testDB command",
   channelType: "all",
   async run(message) {

@@ -1,5 +1,6 @@
 import * as app from "../app.js"
 import yargsParser from "yargs-parser"
+import messagesTable from "../tables/messages.table.js"
 
 const listener: app.Listener<"messageCreate"> = {
   event: "messageCreate",
@@ -72,7 +73,22 @@ const listener: app.Listener<"messageCreate"> = {
       const [match, used] = mentionRegex.exec(dynamicContent) as RegExpExecArray
       message.usedPrefix = `${used} `
       cut(match)
-    } else return
+    } else {
+      let content = message.content
+
+      if (content.length == 0) {
+        message.attachments.forEach(attachment => {
+          content += `${attachment.url}\n`
+        })
+      }
+
+      return messagesTable.query.insert({ 
+        userID: message.author.id,
+        content: content,
+        messageID: message.id,
+        channelID: message.channel.id,
+      })
+    } 
 
     let key = dynamicContent.split(/\s+/)[0]
 

@@ -1,11 +1,16 @@
 import * as app from "../app.js"
 
 export interface Messages {
-  // type of table
+  id: number 
+  userID: string
+  content: string
+  messageID: string
+  channelID: string
+  created_at: string
 }
 
 export default new app.Table<Messages>({
-  name: "messages.table",
+  name: "messages",
   description: "The messages.table table",
   setup: (table) => {
     table.integer("id").primary()
