@@ -57,3 +57,7 @@ export async function find() {
 export async function add(data: Data) {
   await moderations.query.insert(data)
 }
+
+export async function remove(data: Data) {
+  
+}
