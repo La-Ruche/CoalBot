@@ -6,6 +6,14 @@ const listener: app.Listener<"interactionCreate"> = {
   event: "interactionCreate",
   description: "A interactionCreate listener",
   async run(interaction) {
+    if (interaction.isApplicationCommand()) {
+      let cmd = app.commands.resolve(interaction.command!.name)
+
+      if (cmd) {
+        cmd.options.run(interaction)
+      }
+    }
+
     if (
       interaction.isButton() &&
       interaction.customId.startsWith("pagination-")

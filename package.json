@@ -30,6 +30,7 @@
     "boxen": "^6.2.1",
     "chalk": "^4.1.2",
     "dayjs": "^1.10.7",
+    "dirname-filename-esm": "^1.1.1",
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0",
     "figlet": "^1.5.2",

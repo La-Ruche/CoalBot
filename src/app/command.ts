@@ -1,5 +1,4 @@
 import discord from "discord.js"
-import API from "discord-api-types/v8"
 import chalk from "chalk"
 import tims from "tims"
 import path from "path"
@@ -170,7 +169,12 @@ export interface CommandOptions<Type extends keyof CommandMessageType> {
   /**
    * This slash command options are automatically setup on bot running but you can configure it manually too.
    */
-  slash?: API.RESTPostAPIApplicationCommandsJSONBody
+  slash?: discord.ApplicationCommandData
+
+  guilds?: string[]
+
+  slashPermissions?: discord.ApplicationCommandPermissionData[]
+
   /**
    * This property is automatically setup on bot running.
    * @deprecated
